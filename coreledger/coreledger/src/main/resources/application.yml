@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: coreledger
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/coreledger
+    username: coreledger
+    password: coreledger
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: "change-this-to-a-long-random-secret-in-production-min-32-bytes"
+  expiration-minutes: 60
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
