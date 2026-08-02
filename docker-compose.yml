@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:16
+    container_name: coreledger-postgres
+    environment:
+      POSTGRES_DB: coreledger
+      POSTGRES_USER: coreledger
+      POSTGRES_PASSWORD: coreledger
+    ports:
+      - "5432:5432"
+    volumes:
+      - coreledger-data:/var/lib/postgresql/data
+
+volumes:
+  coreledger-data:
